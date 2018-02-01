@@ -12,8 +12,9 @@ var URLArray = tokenURL.split("");
 var first = URLArray.indexOf("=") + 1;
 var last = URLArray.indexOf("&");
 var token = tokenURL.substring(first, last);
+console.log("last exists: ", last);
 
-if (!first){
+if (!last){
     $.ajax({
         url: 'https://api.spotify.com/v1/me',
         headers: {
