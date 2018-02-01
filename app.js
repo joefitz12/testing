@@ -8,7 +8,6 @@ var token = "";
 //pull off the token
 
 // if (token){
-
 //     $.ajax({
 //         url: 'https://api.spotify.com/v1/me',
 //         headers: {
