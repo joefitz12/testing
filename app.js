@@ -18,7 +18,7 @@ console.log("token", token);
 
 if (last > 0){
     $.ajax({
-        url: 'https://api.spotify.com/v1/me/following?type=artist',
+        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=50',
         headers: {
         'Authorization': 'Bearer ' + token
         },
