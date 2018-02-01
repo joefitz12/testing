@@ -4,17 +4,18 @@ $(document).on("click", function() {
 })
 
 console.log("Url is", window.location.href);
-var token = //pull off the token
+var token = "";
+//pull off the token
 
-    if (token) {
+if (token) {
 
-        $.ajax({
-            url: 'https://api.spotify.com/v1/me',
-            headers: {
-                'Authorization': 'Bearer ' + token
-            },
-            success: function(response) {
-                console.log(response);
-            }
-        });
-    }
+    $.ajax({
+        url: 'https://api.spotify.com/v1/me',
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
