@@ -1,3 +1,4 @@
+var artistArray = [];
 var tokenURL = "";
 
 console.log("working");
@@ -23,7 +24,16 @@ if (last > 0){
         'Authorization': 'Bearer ' + token
         },
         success: function(response) {
-        console.log(response);
+            console.log(response);
+
+            var artistList = function (){
+                for (i = 0; i < response.artists.items.length; i++){
+                artistArray.push(response.artists.items[i].name);
+                }
+            }
+
+            artistList();
+            console.log("artistArray", artistArray);
         }
     });
 }
