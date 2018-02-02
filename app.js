@@ -58,16 +58,18 @@ $("#login").on("click", function(){
 
 $("#followButton").on("click", function(){
     window.location.replace("https://accounts.spotify.com/en/authorize?client_id=84dbfb40bf444d6bb409195e34dcd32d&response_type=token&scope=user-follow-modify&redirect_uri=https://joefitz12.github.io/testing/");
+});
 
-    var URLArray = tokenURL.split("");
-    var first = URLArray.indexOf("=") + 1;
-    var last = URLArray.indexOf("&");
-    var token = tokenURL.substring(first, last);
-    // var artist = String($("#followArtist").val());
-    var spotifyID = "";
-    var artist = "Foxygen";
-    console.log("artist", artist);
+var URLArray = tokenURL.split("");
+var first = URLArray.indexOf("=") + 1;
+var last = URLArray.indexOf("&");
+var token = tokenURL.substring(first, last);
+var artist = String($("#followArtist").val());
+var spotifyID = "";
+var artist = "Foxygen";
+console.log("artist", artist);
 
+if (last > 0){
     $.ajax({
         url: 'https://api.spotify.com/v1/search?q=' + artist + '&type=artist',
         headers: {
@@ -85,12 +87,10 @@ $("#followButton").on("click", function(){
                 },
         
                 success: function(response) {
-                    console.log("token", token);
                     console.log("artist followed");
                 }
-        
-                
             });
         }
     });
-});
+}
+    
