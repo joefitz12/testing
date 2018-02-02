@@ -65,6 +65,8 @@ $("#followButton").on("click", function(){
     var token = tokenURL.substring(first, last);
     // var artist = String($("#followArtist").val());
     var spotifyID = "";
+    var artist = "Foxygen";
+    console.log("artist", artist);
 
     $.ajax({
         url: 'https://api.spotify.com/v1/search?q=' + artist + '&type=artist',
