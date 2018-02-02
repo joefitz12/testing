@@ -71,7 +71,7 @@ var spotifyID = "";
 var artist = "Foxygen";
 console.log("artist", artist);
 
-if (last > 0){
+// if (last > 0){
     $.ajax({
         url: 'https://api.spotify.com/v1/search?q=' + artist + '&type=artist',
         headers: {
@@ -83,16 +83,17 @@ if (last > 0){
             console.log(spotifyID);
 
             $.ajax({
-                url: 'https://api.spotify.com/v1/me/following?type=artist&ids=' + spotifyID,
+                url: 'https://api.spotify.com/v1/me/following?type=artist&ids=55LHFEtIplWhsfyWZUwkf4',
                 headers: {
                 'Authorization': 'Bearer ' + token
                 },
         
                 success: function(response) {
+                    console.log(response);
                     console.log(artist, "followed");
                 }
             });
         }
     });
-}
+// }
     
