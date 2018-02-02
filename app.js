@@ -89,7 +89,8 @@ if (last > 0){
                 },
         
                 success: function(response) {
-                    console.log("artist followed");
+                    console.log("url", url);
+                    console.log(artist, "followed");
                 }
             });
         }
