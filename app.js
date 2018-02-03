@@ -13,6 +13,26 @@ var first = URLArray.indexOf("=") + 1;
 var last = URLArray.indexOf("&");
 var token = tokenURL.substring(first, last);
 
+var artistRender = function(){
+    for (i = 0; i < followArray.length; i++){
+        var newDiv = $("<p>");
+        newDiv.addClass("artistDiv");
+        newDiv.attr("data-artist",followArray[i]);
+        newDiv.text(followArray[i]);
+        newDiv.on("click", function(){
+            if (artistArr.indexOf($(this).attr("data-artist")) < 0){
+                artistArr.push($(this).attr("data-artist"));
+                $(this).addClass("selectedArtist");
+            }
+            else {
+                artistArr.splice(artistArr.indexOf($(this).attr("data-artist")), 1);
+                $(this).removeClass("selectedArtist");
+            }
+        });
+        $("#artistList").append(newDiv);
+    }
+}
+
 if (last > 0){
     $.ajax({
         url: 'https://api.spotify.com/v1/me/following?type=artist&limit=50',
@@ -82,26 +102,6 @@ if (last > 0){
         console.log("local storage cleared?", localStorage.getItem("follow"));
 
     };
-
-    var artistRender = function(){
-        for (i = 0; i < followArray.length; i++){
-            var newDiv = $("<p>");
-            newDiv.addClass("artistDiv");
-            newDiv.attr("data-artist",followArray[i]);
-            newDiv.text(followArray[i]);
-            newDiv.on("click", function(){
-                if (artistArr.indexOf($(this).attr("data-artist")) < 0){
-                    artistArr.push($(this).attr("data-artist"));
-                    $(this).addClass("selectedArtist");
-                }
-                else {
-                    artistArr.splice(artistArr.indexOf($(this).attr("data-artist")), 1);
-                    $(this).removeClass("selectedArtist");
-                }
-            });
-            $("#artistList").append(newDiv);
-        }
-    }
 
     artistRender();
     
