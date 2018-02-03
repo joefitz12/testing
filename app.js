@@ -14,6 +14,7 @@ var last = URLArray.indexOf("&");
 var token = tokenURL.substring(first, last);
 
 var artistRender = function(){
+    $("#artistList").empty();
     for (i = 0; i < followArray.length; i++){
         var newDiv = $("<p>");
         newDiv.addClass("artistDiv");
@@ -49,14 +50,12 @@ if (last > 0){
             }
 
             followList();
-
+            artistRender();
             console.log("followArray", followArray);
         }
     });
     
     if (localStorage.getItem("follow")){
-
-        followArray.push(artist);
 
         console.log("local storage added?", localStorage.getItem("follow"));
 
@@ -92,18 +91,19 @@ if (last > 0){
             
                     success: function(response) {
                         console.log(artist, "followed");
+
+                        localStorage.removeItem("follow");
+
+                        console.log("local storage cleared?", localStorage.getItem("follow"));
+
+                        artistRender();
+
                     }
                 });
             }
         });
 
-        localStorage.removeItem("follow");
-
-        console.log("local storage cleared?", localStorage.getItem("follow"));
-
     };
-
-    artistRender();
     
 };
 
