@@ -101,5 +101,5 @@ if (last > 0){
 $("#followButton").on("click", function(){
     var artist = String($("#followArtist").val());
     localStorage.setItem("follow", artist);
-    window.location.replace("https://accounts.spotify.com/en/authorize?client_id=84dbfb40bf444d6bb409195e34dcd32d&response_type=token&scope=user-follow-modify&redirect_uri=https://joefitz12.github.io/testing/");
+    window.location.replace("https://accounts.spotify.com/en/authorize?client_id=84dbfb40bf444d6bb409195e34dcd32d&response_type=token&scope=user-follow-modify&redirect_uri=https://joefitz12.github.io/testing/g");
 });
