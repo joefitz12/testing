@@ -25,7 +25,7 @@ var artistRender = function(){
         newDiv.text(followArray[i].name);
 
         var photoDiv = $("<div>");
-        photoDiv.html("<img class='artist-photo' src='" + followArray[i].photo + "' alt='" + followArray[i].name + " photo' />");
+        photoDiv.css("background-image",followArray[i].photo);
 
         newDiv.append(photoDiv);
 
@@ -136,9 +136,7 @@ if (last > 0){
                 });
             }
         });
-
     };
-    
 };
 
 
