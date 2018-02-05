@@ -3,8 +3,8 @@
 }
 
 .photoDiv {
-    background-position: "center center";
-    background-size: "cover";
+    background-position: center center;
+    background-size: cover;
     height: 150px;
     width: 150px;
 }
