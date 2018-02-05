@@ -18,8 +18,8 @@ var artistRender = function(){
     for (i = 0; i < followArray.length; i++){
         var newDiv = $("<p>");
         newDiv.addClass("artistDiv");
-        newDiv.attr("data-artist",followArray[i]);
-        newDiv.text(followArray[i]);
+        newDiv.attr("data-artist",followArray[i].name);
+        newDiv.text(followArray[i].name);
         newDiv.on("click", function(){
             if (artistArr.indexOf($(this).attr("data-artist")) < 0){
                 artistArr.push($(this).attr("data-artist"));
@@ -70,9 +70,15 @@ if (last > 0){
 
             var followList = function (){
                 for (i = 0; i < response.artists.items.length; i++){
-                followArray.push(response.artists.items[i].name);
-                }
-            }
+                    var newArtist = {
+                        name: "",
+                        photo: ""
+                    };
+                    newArtist.name = response.artists.items[i].name;
+                    newArtist.photo = response.artists.items[i].images[0].url;
+                    followArray.push(newArtist);
+                };
+            };
 
             followList();
             artistRender();
@@ -88,7 +94,10 @@ if (last > 0){
         var last = URLArray.indexOf("&");
         var token = tokenURL.substring(first, last);
         var spotifyID = "";
-        var artist = localStorage.getItem("follow");
+        var artist = {
+            name: localStorage.getItem("follow"),
+            photo: ""
+        }
 
         followArray.push(artist);
 
