@@ -22,7 +22,7 @@ var artistRender = function(){
         newDiv.text(followArray[i].name);
 
         var photoDiv = $("<div>");
-        photoDiv.html("<img class='artist-photo' src=" + followArray[i].photo + "alt='" + followArray[i].name + " photo' />");
+        photoDiv.html("<img class='artist-photo' src='" + followArray[i].photo + "' alt='" + followArray[i].name + " photo' />");
 
         newDiv.append(photoDiv);
 
