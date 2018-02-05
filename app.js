@@ -1,6 +1,9 @@
 var followArray = [];
 var artistArr = [];
 var tokenURL = "";
+var artistClick = function(){
+    console.log("something");
+};
 
 $("#login").on("click", function(){
     window.location.replace("https://accounts.spotify.com/en/authorize?client_id=84dbfb40bf444d6bb409195e34dcd32d&response_type=token&scope=user-follow-read&redirect_uri=https://joefitz12.github.io/testing/");
