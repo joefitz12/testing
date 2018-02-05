@@ -25,8 +25,9 @@ var artistRender = function(){
         newDiv.text(followArray[i].name);
 
         var photoDiv = $("<div>");
+        photoDiv.addClass("photoDiv");
+        console.log("class added");
         photoDiv.css("background-image", "url('" + followArray[i].photo + "')");
-        console.log("photoDiv added");
 
 
         newDiv.append(photoDiv);
