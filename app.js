@@ -20,6 +20,12 @@ var artistRender = function(){
         newDiv.addClass("artistDiv");
         newDiv.attr("data-artist",followArray[i].name);
         newDiv.text(followArray[i].name);
+
+        var photoDiv = $("<div>");
+        photoDiv.html("<img class='artist-photo' src=" + followArray[i].photo + "alt='" + followArray[i].name + " photo' />");
+
+        newDiv.append(photoDiv);
+
         newDiv.on("click", function(){
             if (artistArr.indexOf($(this).attr("data-artist")) < 0){
                 artistArr.push($(this).attr("data-artist"));
