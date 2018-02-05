@@ -26,6 +26,7 @@ var artistRender = function(){
 
         var photoDiv = $("<div>");
         photoDiv.css("background-image", "url('" + followArray[i].photo + "')");
+        console.log("photoDiv added");
 
 
         newDiv.append(photoDiv);
