@@ -5,13 +5,14 @@
 .photoDiv {
     background-position: center center;
     background-size: cover;
-    height: 150px;
-    width: 150px;
-    display: inline-block;
+    height: 100px;
+    width: 100px;
+    display: block;
+    float: right;
 }
 
 .artistDiv {
-    height: 150px;
+    height: 100px;
     width: 450px;
 }
 
