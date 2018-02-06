@@ -2,9 +2,9 @@ var followArray = [];
 var artistArr = [];
 var tokenURL = "";
 var city = "";
-// var artistClick = function(){
-//     console.log("something");
-// };
+var artistClick = function(){
+    console.log("something");
+};
 
 if (localStorage.getItem("city")) {
     city = localStorage.getItem("city");
