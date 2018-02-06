@@ -170,8 +170,11 @@ $("#clearButton").on("click",function(){
 });
 
 var cityClick = function(){
+    console.log("cityClick function activated");
     city = String($("#city").val());
+    console.log(String($("#city").val()), "in box so city = ", city)
     localStorage.setItem("city", city);
-}
+    console.log(localStorage.getItem("city"), "is saved to local storage")
+};
 
 $("#citybtn").on("click", cityClick);
