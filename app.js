@@ -19,10 +19,10 @@ var token = tokenURL.substring(first, last);
 var artistRender = function(){
     $("#artistList").empty();
     for (i = 0; i < followArray.length; i++){
-        var newDiv = $("<p>");
+        var newDiv = $("<div>");
         newDiv.addClass("artistDiv");
         newDiv.attr("data-artist",followArray[i].name);
-        newDiv.text(followArray[i].name);
+        newDiv.html("<p class='artistText'>" + followArray[i].name + "</p>");
 
         var photoDiv = $("<div>");
         photoDiv.addClass("photoDiv");
