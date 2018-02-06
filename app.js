@@ -1,9 +1,15 @@
 var followArray = [];
 var artistArr = [];
 var tokenURL = "";
+var city = "";
 // var artistClick = function(){
 //     console.log("something");
 // };
+
+if (localStorage.getItem("city")) {
+    city = localStorage.getItem("city");
+    $("#city").val(city);
+}
 
 $("#login").on("click", function(){
     window.location.replace("https://accounts.spotify.com/en/authorize?client_id=84dbfb40bf444d6bb409195e34dcd32d&response_type=token&scope=user-follow-read&redirect_uri=https://joefitz12.github.io/testing/");
@@ -162,3 +168,10 @@ $("#clearButton").on("click",function(){
     $(".selectedArtist").removeClass("selectedArtist");
     $("#list").empty();
 });
+
+var cityClick = function(){
+    city = String($("#city").val());
+    localStorage.setItem("city", city);
+}
+
+$("#citybtn").on("click", cityClick);
