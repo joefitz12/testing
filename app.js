@@ -133,8 +133,8 @@ if (last > 0) {
             },
 
             success: function(response){
-                console.log("you get this when you ask Spotify for an ID", response);
-                spotifyID = response.artists.items[0].id;
+                if(response.artists.items[0].id){
+                    spotifyID = response.artists.items[0].id;
 
                 $.ajax({
                     method: "PUT",
@@ -187,6 +187,10 @@ if (last > 0) {
                         console.log("got ID, couldn't follow artist error", response);
                     }
                 });
+                }
+                else {
+                    console.log("artist not found");
+                }
             },
             error: function(response){
                 console.log("tried to follow artist couldn't get spotifyID error", response);
