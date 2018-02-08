@@ -189,7 +189,11 @@ if (last > 0) {
                 });
                 }
                 else {
-                    console.log("artist not found");
+                    artistRender();
+                    var errorDiv = $("<div>");
+                    errorDiv.addClass("artistError");
+                    errorDiv.text("No results found for " + artist + ".");
+                    $("#artistList").prepend(errorDiv);
                 }
             },
             error: function(response){
